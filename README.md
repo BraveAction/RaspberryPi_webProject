@@ -1,2 +1,3 @@
 # RaspberryPi_webProject
-1:django,djangorestframework
+### 需要的库:
+1. django,djangorestframework,pygments

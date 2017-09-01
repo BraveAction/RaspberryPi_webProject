@@ -19,6 +19,8 @@ from django.conf.urls import url, include
 from django.contrib.auth.models import User
 from rest_framework import routers, serializers, viewsets
 
+from . import testdb
+
 
 # urlpatterns = [
 #     url(r'^admin/', admin.site.urls),
@@ -45,5 +47,9 @@ router.register(r'users', UserViewSet)
 # Additionally, we include login URLs for the browsable API.
 urlpatterns = [
     url(r'^', include(router.urls)),
+    url(r'^', include('people.urls')),
+
+    url(r'^testdb$', testdb.testdb),
+
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]
